@@ -1,12 +1,9 @@
 import { IconBrandFacebookFilled } from "@tabler/icons-react";
 import { IconBrandMeta } from "@tabler/icons-react";
-const Login = () => {
-  const [isLogedin, setIsLogedin] = useState(false);
-  const userLogin = () => {
-    setIsLogedin(true);
-  };
+const Login = (props) => {
+  
   return (
-    <div className="px-13 flex border">
+    <div className="px-13 flex border w-full h-170">
       <div className="w-[52%] border-r py-13 relative">
         <p className="rounded-full size-15 flex justify-center pt-3 bg-blue-600">
           <IconBrandFacebookFilled className="size-14 text-white" />
@@ -26,7 +23,7 @@ const Login = () => {
       </div>
       <div className="w-[48%] ps-13 py-30 flex flex-col justify-center">
         <p className="text-lg font-semibold mb-5">Log Into Facebook</p>
-        <form method="post">
+        <form>
           <input
             type="text"
             id="emailOrPhone"
@@ -39,8 +36,7 @@ const Login = () => {
             placeholder="Password"
             className="border border-gray-300 p-4 rounded-2xl w-full mb-6"
           />
-          <button
-            onClick={userLogin}
+          <button onClick={props.LogIn}
             className="w-full bg-blue-600 text-white font-semibold rounded-full py-2 mb-7"
           >
             Log in
